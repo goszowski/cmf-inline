@@ -3,6 +3,5 @@
 @section('content')
 	<div class="container">
 		<h1>Node: {{ $root->node->id }}; Is Active: {{ $root->is_active }}</h1>
-		{!! $root->content !!}
 	</div>
 @endsection

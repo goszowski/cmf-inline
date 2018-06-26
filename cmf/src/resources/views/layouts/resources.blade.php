@@ -171,7 +171,7 @@
         '/vendor/runsite/asset/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
         '/vendor/runsite/asset/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js',
         '/vendor/runsite/asset/bower_components/select2/dist/js/select2.full.min.js',
-        '/vendor/runsite/asset/bower_components/select2/dist/js/i18n/'.LaravelLocalization::setLocale().'.js',
+        '/vendor/runsite/asset/bower_components/select2/dist/js/i18n/'.config('app.locale').'.js',
         '/vendor/runsite/asset/plugins/highlight/highlight.pack.js',
         '/vendor/runsite/asset/plugins/iCheck/icheck.min.js',
         '/vendor/runsite/asset/plugins/bootstrap-typeahead/bootstrap3-typeahead.min.js',

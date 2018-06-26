@@ -1,6 +1,10 @@
 @extends('runsite::layouts.resources')
 @section('body-class', '')
 @section('content')
+
+<style>
+	.g-recaptcha {display: none;}
+</style>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-7">
