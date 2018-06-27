@@ -1,0 +1,147 @@
+.home-slider{
+	margin: 0; padding: 0;
+	list-style-type: none;
+
+	.home-slider__item {
+		margin: 0; padding: 0;
+		position: relative;
+		height: 100vh;
+
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			left: 0; right: 0;
+			top: 0; bottom: 0;
+			background: rgba(0,0,0, .22);
+		}
+
+		img {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.home-slider__item__title {
+			position: absolute;
+			z-index: 3;
+			top: calc(50% + 50px);
+			left: 172px;
+			color: #fff;
+			font-weight: 700;
+			font-size: 5.55vw;
+			line-height: 5.95vw;
+			max-width: 500px;
+			transform: translate(0, -50%);
+			opacity: 0;
+			transition: top 1s, opacity 1s;
+			transition-delay: .4s;
+
+			@media(max-width: 992px){
+				left: 30px;
+				top: calc(50% + 30px);
+			}
+
+			@media(max-width: 576px){ 
+				font-size: 11.55vw;
+				line-height: 11.25vw;
+			}
+
+			span.home-slider__item__title_little {
+				position: absolute;
+				top: -120px;
+				font-size: 1.25vw;
+				font-weight: normal;
+				font-family: 'Maitree', serif;
+				text-transform: uppercase;
+				line-height: 45px;
+				opacity: 0;
+				transition: top .8s, opacity .8s;
+				transition-delay: .5s;
+
+				@media(max-width: 992px){ 
+					font-size: 2vw;
+				}
+
+				@media(max-width: 768px){ 
+					font-size: 2.5vw;
+				}
+
+				@media(max-width: 576px){ 
+					font-size: 5vw;
+					line-height: 75px;
+				}
+			}
+		}
+	}
+
+	.owl-dots {
+		position: absolute;
+		bottom: 100px;
+		left: 172px;
+		font-size: 0;
+
+		@media(max-width: 992px){
+			left: 30px;
+			bottom: 30px;
+		}
+
+		.owl-dot {
+			display: inline-block;
+			width: 44px;
+			height: 20px;
+			margin-right: 15px;
+			position: relative;
+
+			@media(max-width: 992px){
+				width: 22px;
+			}
+
+			.line {
+				content: '';
+				position: absolute;
+				left: 0; top: 50%; right: 0;
+				height: 1px;
+				background: rgba(255,255,255, .3);
+				transition: background 100ms;
+			}
+
+			.progress {
+				content: '';
+				position: absolute;
+				left: 0; top: 50%;
+				height: 1px;
+				background: #fff;
+				width: 0%;
+				display: none;
+			}
+
+			&:hover .line {
+				background: rgba(255,255,255, .5);
+			}
+
+			&.active .progress {
+				display: block;
+			}
+
+			&:active, &:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
+.active {
+	.home-slider__item__title {
+		top: 50%!important;
+		opacity: 1!important;
+	}
+
+	span.home-slider__item__title_little {
+		top: -50px!important;
+		opacity: 1!important;
+	}
+}
+

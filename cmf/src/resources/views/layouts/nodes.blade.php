@@ -239,7 +239,7 @@
 														@endforeach
 														@if(str_is('position *', $depended_model->settings->nodes_ordering))
 															<td>
-																@if($orderField == 'position' and $orderDirection == 'asc')
+																@if($orderField == 'position')
 																	<div class="btn-group">
 																		{!! Form::open(['url'=>route('admin.nodes.move.up', ['node'=>$child->node_id, 'depended_model_id'=>$depended_model->id]), 'method'=>'patch', 'style'=>'display: inline;']) !!}
 																			<button type="submit" {{ $child->position == 1 ? 'disabled' : null }} class="btn btn-sm btn-default ripple remember-scroll-position" data-ripple-color="#5d5d5d">

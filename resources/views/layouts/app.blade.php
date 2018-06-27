@@ -1,60 +1,132 @@
 @extends('layouts.resources')
 
 @section('app')
-<nav class="navbar navbar-default">
-	<div class="container">
-	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="{{ lPath('/') }}">Brand</a>
+<header class="@yield('header-class', 'black-objects')">
+	<a href="/" class="logo">
+		<span class="logo-default-state"></span>
+		<span class="logo-hover-state"></span>
+	</a>
+
+	<button type="button" class="menu-toggler">
+		<span class="menu-toggler__default-state"></span>
+		<span class="menu-toggler__hover-state"></span>
+	</button>
+
+	<div id="navigation">
+		<div class="navigation-inner">
+			<button type="button" class="btn-transp menu-close">
+				<span></span>
+			</button>
+			<nav class="main-nav">
+				<ul>
+					<li>
+						<a class="active" href="/portfolio">Portfolio</a>
+					</li>
+					<li>
+						<a href="/oferta">Oferta</a>
+					</li>
+					<li>
+						<a href="/studio">Studio</a>
+					</li>
+					<li>
+						<a href="/portfolio">Aktualności</a>
+					</li>
+					<li>
+						<a href="/portfolio">Kontakt</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="contact-info">
+				<div class="contact-info_top">
+					<p>STUDIO - LOREM IPSUDOLOR</p>
+					<p>Sikorskiego 23/9</p>
+					<p>38-200 Pilzno</p>
+				</div>
+				<div class="contact-info_bottom">
+					<p>T<span>+48 500 200 300</span></p>
+					<p>E<span><a href="mailto:biuro@STUDIO.pl">biuro@STUDIO.pl</a></span></p>
+				</div>
+			</div>
+			
+			<nav class="footer-nav">
+				<ul class="footer-nav_left">
+					<li>
+						<a href="#">Polityka cookies</a>
+					</li>
+					<li>
+						<a href="#">Digital signage</a>
+					</li>
+					<li>
+						<a href="#">Praca</a>
+					</li>
+				</ul>
+
+				<ul class="footer-nav_right">
+					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+<main>
+	@yield('content')
+</main>
+
+{{-- Footer --}}
+<footer  data-aos="fade" class="aos pl-172 pr-172">
+
+	<div class="footer-top-line clearfix">
+		<div class="inner-block">
+			<div class="contact-info">
+				<div class="contact-info_top">
+					<p>STUDIO - LOREM IPSUDOLOR</p>
+					<p>Sikorskiego 23/9</p>
+					<p>38-200 Pilzno</p>
+				</div>
+				<div class="contact-info_bottom">
+					<p>T<span>+48&nbsp;500&nbsp;200&nbsp;300</span></p>
+					<p>E<span><a href="mailto:biuro@STUDIO.pl">biuro@STUDIO.pl</a></span></p>
+				</div>
+			</div>
+		</div>
+		<div class="inner-block text-right">
+			<span id="up" class="has-icon-btn text-uppercase transform-btn white-btn fz10 to-top">TO TOP<img src="/assets/dist/images/arrow_w.svg" alt="d"></span>
+		</div>
+	</div>
+	
+	<div class="footer-bottom-line clearfix">
+		<div class="inner-block">
+			<ul class="footer-nav_left">
+					<li>
+						<a href="#">Polityka cookies</a>
+					</li>
+					<li>
+						<a href="#">Digital signage</a>
+					</li>
+					<li>
+						<a href="#">Praca</a>
+					</li>
+				</ul>
+		</div>
+		<div class="inner-block text-right">
+			<ul class="footer-nav_right">
+					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+				</ul>
+		</div>
 	</div>
 
-	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		<ul class="nav navbar-nav">
-		<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-		<li><a href="#">Link</a></li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-			<li><a href="#">Action</a></li>
-			<li><a href="#">Another action</a></li>
-			<li><a href="#">Something else here</a></li>
-			<li role="separator" class="divider"></li>
-			<li><a href="#">Separated link</a></li>
-			<li role="separator" class="divider"></li>
-			<li><a href="#">One more separated link</a></li>
-			</ul>
-		</li>
-		</ul>
-		<form class="navbar-form navbar-left">
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search">
-		</div>
-		<button type="submit" class="btn btn-default">Submit</button>
-		</form>
-		<ul class="nav navbar-nav navbar-right">
-		<li><a href="#">Link</a></li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-			<li><a href="#">Action</a></li>
-			<li><a href="#">Another action</a></li>
-			<li><a href="#">Something else here</a></li>
-			<li role="separator" class="divider"></li>
-			<li><a href="#">Separated link</a></li>
-			</ul>
-		</li>
-		</ul>
-	</div><!-- /.navbar-collapse -->
-	</div><!-- /.container-fluid -->
-</nav>
 
-@yield('content')
+</footer>
+{{-- / Footer --}}
 
 @endsection
