@@ -37,6 +37,10 @@
 	<link rel="stylesheet" href="{{ asset('assets/vendor/aos/dist/aos.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/dist/css/style.min.css') }}">
 
+	<style>
+		.text-white {color: #fff;}
+	</style>
+
 	{{-- APP STYLES END --}}
 </head>
 <body>

@@ -6,15 +6,15 @@
 <div data-aos="fade" class="aos title-block title-block_portfolio clearfix text-xs-md-center">
 	<div class="inner-block pl-172">
 		<p class="title-block_small-title">Foto STUDIO</p>
-		<h2 class="title-block_big-title">
+		<h1 class="title-block_big-title">
 			<span class="element" data-loop="true" data-backdelay="3000" 
-				@foreach ($section->names as $k=>$name)
-					data-text{{ $k }}="{{ $name }}" 
+				@foreach ($section->wordsArr as $k=>$word)
+					data-text{{ $k }}="{{ trim($word) }}" 
 				@endforeach
 				>
-				{{ $section->firstName }}
+				{{ $section->name }}
 			</span>
-		</h2>
+		</h1>
 	</div>
 	<div class="inner-block pr-172">
 		<div class="title-block_descr">
@@ -89,7 +89,7 @@
 
 		$('.element').typed({
 			strings: [
-				@foreach($section->names as $k=>$name)
+				@foreach($section->wordsArr as $k=>$word)
 					$('.element').data('text{{ $k }}'), 
 				@endforeach
 			],

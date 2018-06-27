@@ -25,6 +25,7 @@ class SectionsController extends RunsiteCMFBaseController
 	 */
 	public function show(): View
 	{
-		return $this->view('sections.show');
+		$blocks = M('block')->where('parent_id', $this->node->id)->ordered()->get();
+		return $this->view('sections.show', compact('blocks'));
 	}
 }
