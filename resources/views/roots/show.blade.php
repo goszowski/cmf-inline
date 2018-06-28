@@ -77,22 +77,22 @@
 </div>
 
 <div data-aos="fade" class="aos bottom_links-wrapp pl-172 pr-172">
-	<p class="title-block_small-title">Nasza kompleksowa oferta</p>
-	<h2 class="title-block_big-title">Kompetencje</h2>
+	<p class="title-block_small-title">{{ t('Nasza kompleksowa oferta') }}</p>
+	<h2 class="title-block_big-title">{{ t('Kompetencje') }}</h2>
 
 	<div class="bottom_links clearfix">
 		<div class="inner-block">
 			<ul class="links">
-				<li class="active"><a href="#" class="bottom-link">Oferta jeden tez</a></li>
-				<li><a href="#" class="bottom-link">Oferta lorem ipsum</a></li>
-				<li><a href="#" class="bottom-link">Oferta trzy oferta</a></li>
-			</ul>
-		</div>
-		<div class="inner-block">
-			<ul class="links">
-				<li><a href="#" class="bottom-link">Oferta jeden tez</a></li>
-				<li><a href="#" class="bottom-link">Oferta lorem ipsum</a></li>
-				<li><a href="#" class="bottom-link">Oferta trzy oferta</a></li>
+
+				@foreach($services as $k=>$service)
+
+					@if($k and $k%3 == 0)
+						</ul></div><div class="inner-block"><ul class="links">
+					@endif
+
+					<li><a href="#" class="bottom-link">{{ $service->name }}</a></li>
+				@endforeach
+				
 			</ul>
 		</div>
 	</div>
