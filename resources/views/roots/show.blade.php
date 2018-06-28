@@ -56,7 +56,7 @@
 			@endif
 
 			<div class="inner-block">
-				<a href="/portfolio/show" class="inner-block_link portfolio-link">
+				<a href="{{ lPath($project->node->path->name) }}" class="inner-block_link portfolio-link">
 					<img src="{{ $project->image->size(850) }}" alt="{{ $project->name }}">
 					<div class="inner-block_link__descr">
 						<h3 class="inner-block_link__big-title">{{ $project->name }}</h3>
