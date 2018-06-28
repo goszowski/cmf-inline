@@ -3,8 +3,8 @@
 <div class="wrapper">
   <header class="main-header">
     <a href="{{ route('admin.boot') }}" class="logo ripple hidden-xs">
-      <span class="logo-mini"><b>R</b>S</span>
-      <span class="logo-lg"><b>runsite</b></span>
+      <span class="logo-mini"><b>AA</b>O</span>
+      <span class="logo-lg"><b>Admin</b>Area</span>
     </a>
     <nav class="navbar navbar-static-top">
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -270,13 +270,6 @@
 
   @yield('app')
 </div>
-<footer class="main-footer">
-  <div class="pull-right hidden-xs">
-    <b>Version</b> 2.4.0
-  </div>
-  <strong>Copyright &copy; <a href="https://adminlte.io">RunsiteCMF</a>.</strong> All rights
-  reserved.
-</footer>
 </div>
 @endsection
 
