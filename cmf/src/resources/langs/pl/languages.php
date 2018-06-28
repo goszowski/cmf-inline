@@ -1,18 +1,18 @@
 <?php 
 
 return [
-	'app_name' => 'Languages/Translations',
+	'app_name' => 'Języki/Tłumaczenia',
 
-	'The language is created' => 'The language is created',
-	'The language is updated' => 'The language is updated',
-	'The language is deleted' => 'The language is deleted',
-	'New language' => 'New language',
+	'The language is created' => 'Język został stworzony',
+	'The language is updated' => 'Język został zaktualizowany',
+	'The language is deleted' => 'Język został usunięty',
+	'New language' => 'Nowy język',
 	'Locale' => 'Locale',
-	'Display name' => 'Display name',
-	'Delete' => 'Delete',
-	'Are you sure' => 'Are you sure',
-	'Create' => 'Create',
-	'Update' => 'Update',
+	'Display name' => 'Nazwa wyświetlania',
+	'Delete' => 'Usuń',
+	'Are you sure' => 'Jesteś pewien',
+	'Create' => 'Stwórz',
+	'Update' => 'Zapisz',
 	'Available in config' => 'Available in config',
 	'Not available' => 'Not available',
 	'Add or uncomment section with this locale in' => 'Add or uncomment section with this locale in',

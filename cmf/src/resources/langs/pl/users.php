@@ -1,7 +1,7 @@
 <?php 
 
 return [
-	'app_name' => 'Users/Groups',
+	'app_name' => 'Użytkownicy/Grupy',
 
 	'Users' => 'Users',
 	'Groups' => 'Groups',

@@ -1,5 +1,5 @@
 <?php 
 
 	return [
-		'All notifications' => 'All notifications',
+		'All notifications' => 'Wszystkie powiadomienia',
 	];
