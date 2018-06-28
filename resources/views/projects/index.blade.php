@@ -5,12 +5,14 @@
 
 <div data-aos="fade" class="aos title-block title-block_portfolio clearfix text-xs-md-center">
 	<div class="inner-block pl-172">
-		<p class="title-block_small-title">Foto STUDIO</p>
+		<p class="title-block_small-title">{{ $section->sub_title }}</p>
 		<h1 class="title-block_big-title">
 			<span class="element" data-loop="true" data-backdelay="3000" 
-				@foreach ($section->wordsArr as $k=>$word)
-					data-text{{ $k }}="{{ trim($word) }}" 
-				@endforeach
+				@if($section->wordsArr)
+					@foreach ($section->wordsArr as $k=>$word)
+						data-text{{ $k }}="{{ trim($word) }}" 
+					@endforeach
+				@endif
 				>
 				{{ $section->name }}
 			</span>
@@ -37,18 +39,6 @@
 	</div>
 </div>
 
-<!--
-<div data-aos="fade" data-aos-offset="50" class="aos portfolio-nav pl-172 pr-172">
-	<ul>
-		<li class="active"><a href="#">Kategoria 1</a></li>
-		<li><a href="#">Kategoria 2</a></li>
-		<li><a href="#">Kategoria 3</a></li>
-		<li><a href="#">Kategoria 4</a></li>
-		<li><a href="#">Kategoria 5</a></li>
-		<li><a href="#">Kategoria 6</a></li>
-	</ul>
-</div>
--->
 <div  data-aos="fade"  data-aos-offset="50" class="aos image-links">
 	<div class="image-links_line clearfix">
 
@@ -87,16 +77,18 @@
 
 	$(document).ready(function(){
 
-		$('.element').typed({
-			strings: [
-				@foreach($section->wordsArr as $k=>$word)
-					$('.element').data('text{{ $k }}'), 
-				@endforeach
-			],
-			loop: $('.element').data('loop') ? $('.element').data('loop') : false ,
-			backDelay: $('.element').data('backdelay') ? $('.element').data('backdelay') : 2000 ,
-			typeSpeed: 10,
-		});
+		@if($section->wordsArr)
+			$('.element').typed({
+				strings: [
+					@foreach($section->wordsArr as $k=>$word)
+						$('.element').data('text{{ $k }}'), 
+					@endforeach
+				],
+				loop: $('.element').data('loop') ? $('.element').data('loop') : false ,
+				backDelay: $('.element').data('backdelay') ? $('.element').data('backdelay') : 2000 ,
+				typeSpeed: 10,
+			});
+		@endif
 
 		AOS.init({
 			duration: 1000,

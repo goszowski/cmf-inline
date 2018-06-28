@@ -6,7 +6,7 @@
 
 <div class="portfolio-inner-head">
 	<img src="{{ $project->image->max() }}" alt="{{ $project->name }}">
-	<a href="/portfolio" class="back-to-portfolio has-icon-btn text-uppercase">powrót</a>
+	<a href="/portfolio" class="back-to-portfolio has-icon-btn text-uppercase">{{ t('powrót') }}</a>
 </div>
 
 <div class="title-block clearfix text-xs-md-center">

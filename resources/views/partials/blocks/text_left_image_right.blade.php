@@ -1,7 +1,7 @@
 <div data-aos="fade" class="aos title-block clearfix text-xs-md-center has-img block-relative img-right">
 	<div class="inner-block pl-172">
 		<div class="oferta-inner-block_descr">
-			<p class="title-block_small-title">napis tekst</p>
+			<p class="title-block_small-title">{{ $block->sub_title }}</p>
 			<h2 class="title-block_big-title fz36">
 				<span class="element" data-loop="true" data-backdelay="3000" 
 					@if($block->wordsArr)

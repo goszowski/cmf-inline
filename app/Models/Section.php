@@ -11,6 +11,11 @@ class Section extends Dynamic
 
 	public function getWordsArrAttribute()
 	{
+		if(! $this->words)
+		{
+			return null;
+		}
+		
 		return explode(',', $this->words);
 	}
 }
