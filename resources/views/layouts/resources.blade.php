@@ -39,6 +39,13 @@
 
 	<style>
 		.text-white {color: #fff;}
+		.studio-text img {
+			padding: 0;
+			margin-left: -100px;
+			margin-right: -100px;
+			width: calc(100% + 200px);
+			max-width: calc(100% + 200px);
+		}
 	</style>
 
 	{{-- APP STYLES END --}}
