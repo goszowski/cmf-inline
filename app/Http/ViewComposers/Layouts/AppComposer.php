@@ -10,7 +10,9 @@ class AppComposer
 	protected $locales;
 	protected $currentLocale;
 	protected $mainMenuItems;
+	protected $footerMenuItems;
 	protected $socialMenuItems;
+	protected $rootNode;
 
 	public function __construct()
 	{
@@ -27,6 +29,12 @@ class AppComposer
 				$this->currentLocale = $this->locales[$locale];
 			}
 		}
+
+		$this->mainMenuItems = M('menu_item')->where('parent_id', 73)->ordered()->get();
+		$this->footerMenuItems = M('menu_item')->where('parent_id', 74)->ordered()->get();
+		$this->socialMenuItems = M('network')->where('parent_id', 75)->ordered()->get();
+
+		$this->rootNode = M('root')->first();
 	}
 
 	public function compose(View $view)
@@ -34,6 +42,8 @@ class AppComposer
 		$view->with('locales', $this->locales)
 		->with('currentLocale', $this->currentLocale)
 		->with('mainMenuItems', $this->mainMenuItems)
-		->with('socialMenuItems', $this->socialMenuItems);
+		->with('footerMenuItems', $this->footerMenuItems)
+		->with('socialMenuItems', $this->socialMenuItems)
+		->with('rootNode', $this->rootNode);
 	}
 }

@@ -19,55 +19,38 @@
 			</button>
 			<nav class="main-nav">
 				<ul>
-					<li>
-						<a class="active" href="/portfolio">Portfolio</a>
-					</li>
-					<li>
-						<a href="/oferta">Oferta</a>
-					</li>
-					<li>
-						<a href="/studio">Studio</a>
-					</li>
-					<li>
-						<a href="/portfolio">Aktualności</a>
-					</li>
-					<li>
-						<a href="/portfolio">Kontakt</a>
-					</li>
+					@foreach($mainMenuItems as $menu_item)
+						<li>
+							<a class="" href="{{ lPath($menu_item->link->node->path->name) }}">{{ $menu_item->name }}</a>
+						</li>
+					@endforeach
 				</ul>
 			</nav>
 
 			<div class="contact-info">
 				<div class="contact-info_top">
-					<p>STUDIO - LOREM IPSUDOLOR</p>
-					<p>Sikorskiego 23/9</p>
-					<p>38-200 Pilzno</p>
+					{!! $rootNode->address !!}
 				</div>
 				<div class="contact-info_bottom">
-					<p>T<span>+48 500 200 300</span></p>
-					<p>E<span><a href="mailto:biuro@STUDIO.pl">biuro@STUDIO.pl</a></span></p>
+					{!! $rootNode->contact !!}
 				</div>
 			</div>
 			
 			<nav class="footer-nav">
 				<ul class="footer-nav_left">
-					<li>
-						<a href="#">Polityka cookies</a>
-					</li>
-					<li>
-						<a href="#">Digital signage</a>
-					</li>
-					<li>
-						<a href="#">Praca</a>
-					</li>
+					@foreach($footerMenuItems as $menu_item)
+						<li>
+							<a class="" href="{{ lPath($menu_item->link->node->path->name) }}">{{ $menu_item->name }}</a>
+						</li>
+					@endforeach
 				</ul>
 
 				<ul class="footer-nav_right">
-					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+					@foreach($socialMenuItems as $menu_item)
+						<li>
+							<a rel="nofollow" target="_blank" href="{{ $menu_item->link }}"><i class="fa fa-{{ str_slug($menu_item->name) }}"></i></a>
+						</li>
+					@endforeach
 				</ul>
 			</nav>
 		</div>
@@ -85,13 +68,10 @@
 		<div class="inner-block">
 			<div class="contact-info">
 				<div class="contact-info_top">
-					<p>STUDIO - LOREM IPSUDOLOR</p>
-					<p>Sikorskiego 23/9</p>
-					<p>38-200 Pilzno</p>
+					{!! $rootNode->address !!}
 				</div>
 				<div class="contact-info_bottom">
-					<p>T<span>+48&nbsp;500&nbsp;200&nbsp;300</span></p>
-					<p>E<span><a href="mailto:biuro@STUDIO.pl">biuro@STUDIO.pl</a></span></p>
+					{!! $rootNode->contact !!}
 				</div>
 			</div>
 		</div>
@@ -103,25 +83,21 @@
 	<div class="footer-bottom-line clearfix">
 		<div class="inner-block">
 			<ul class="footer-nav_left">
-					<li>
-						<a href="#">Polityka cookies</a>
-					</li>
-					<li>
-						<a href="#">Digital signage</a>
-					</li>
-					<li>
-						<a href="#">Praca</a>
-					</li>
+					@foreach($footerMenuItems as $menu_item)
+						<li>
+							<a class="" href="{{ lPath($menu_item->link->node->path->name) }}">{{ $menu_item->name }}</a>
+						</li>
+					@endforeach
 				</ul>
 		</div>
 		<div class="inner-block text-right">
 			<ul class="footer-nav_right">
-					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-				</ul>
+				@foreach($socialMenuItems as $menu_item)
+					<li>
+						<a rel="nofollow" target="_blank" href="{{ $menu_item->link }}"><i class="fa fa-{{ str_slug($menu_item->name) }}"></i></a>
+					</li>
+				@endforeach
+			</ul>
 		</div>
 	</div>
 
