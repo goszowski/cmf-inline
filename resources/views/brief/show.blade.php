@@ -22,23 +22,24 @@
 	</div>
 </div>
 
-@foreach($groups as $group)
-<div class="contact-form clearfix">
-	<p class="title-block_small-title">{{ $group->name }}</p>
-	<div class="row">
+{!! Form::open(['url'=>lPath('/brief'), 'method'=>'post']) !!}
+	@foreach($groups as $group)
+	<div class="contact-form clearfix">
+		<p class="title-block_small-title">{{ $group->name }}</p>
+		<div class="row">
 
-		@foreach($fields as $field)
-			@if($field->parent_id == $group->id)
-				@include('partials.fields.' . $field->field_type->template)
-			@endif
-		@endforeach
+			@foreach($fields as $field)
+				@if($field->parent_id == $group->id)
+					@include('partials.fields.' . $field->field_type->template)
+				@endif
+			@endforeach
 
+		</div>
 	</div>
-</div>
-@endforeach
+	@endforeach
 
-
-@include('partials.block-link')
+	@include('partials.block-btn')
+{!! Form::close() !!}
 
 @endsection
 
