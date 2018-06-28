@@ -90,7 +90,7 @@
 						</ul></div><div class="inner-block"><ul class="links">
 					@endif
 
-					<li><a href="#" class="bottom-link">{{ $service->name }}</a></li>
+					<li><a href="{{ lPath('/oferta' . '#block-' . $service->node_id) }}" class="bottom-link">{{ $service->name }}</a></li>
 				@endforeach
 				
 			</ul>
