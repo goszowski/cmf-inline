@@ -46,6 +46,24 @@
 			width: calc(100% + 200px);
 			max-width: calc(100% + 200px);
 		}
+
+		.publications-info {
+			font-size: 24px;
+			line-height: 35px;
+			padding-top: 50px;
+		}
+		
+		.publication-image {
+			margin-bottom: 0;
+		}
+
+		.publication-image img {
+			width: 100%;
+		}
+
+		.publication-title-block {
+			padding-bottom: 70px;
+		}
 	</style>
 
 	{{-- APP STYLES END --}}
