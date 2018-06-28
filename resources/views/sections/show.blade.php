@@ -4,7 +4,7 @@
 
 <div data-aos="fade" class="aos title-block clearfix text-xs-md-center">
 	<div class="inner-block pl-172">
-		<p class="title-block_small-title">napis tekst</p>
+		<p class="title-block_small-title">{{ $section->sub_title }}</p>
 		<h1 class="title-block_big-title">
 			<span class="element" data-loop="true" data-backdelay="3000" 
 				@foreach ($section->wordsArr as $k=>$word)
