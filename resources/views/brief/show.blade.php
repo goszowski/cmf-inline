@@ -25,6 +25,7 @@
 </div>
 
 {!! Form::open(['url'=>lPath('/brief'), 'method'=>'post']) !!}
+	{!! app('captcha')->render(); !!}
 	@foreach($groups as $group)
 	<div class="contact-form clearfix">
 		<p class="title-block_small-title">{{ $group->name }}</p>
@@ -39,6 +40,15 @@
 		</div>
 	</div>
 	@endforeach
+
+	<div class="contact-form clearfix">
+		<label>
+			<input required type="checkbox" name="accept" id="accept"> {{ t('Wyrażam zgodę na przetwarzanie moich danych osobowych') }}
+		</label>
+	</div>
+	
+
+
 
 	@include('partials.block-btn')
 {!! Form::close() !!}

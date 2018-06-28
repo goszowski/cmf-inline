@@ -43,5 +43,7 @@ class BriefController extends RunsiteCMFBaseController
 
 
 		Mail::to($root->contact_email)->send(new BriefMail($html));
+
+		return view('brief.complete');
 	}
 }

@@ -64,6 +64,8 @@
 		.publication-title-block {
 			padding-bottom: 70px;
 		}
+
+		.g-recaptcha {display: none;}
 	</style>
 
 	{{-- APP STYLES END --}}
