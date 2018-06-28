@@ -1,7 +1,7 @@
 @extends('layouts.resources')
 
 @section('app')
-<header class="@yield('header-class', 'black-objects')">
+@if(! request('ajax'))<header class="@yield('header-class', 'black-objects')">
 	<a href="/" class="logo">
 		<span class="logo-default-state"></span>
 		<span class="logo-hover-state"></span>
@@ -57,9 +57,9 @@
 	</div>
 </header>
 
-<main>
+<main>@endif
 	@yield('content')
-</main>
+@if(! request('ajax'))</main>
 
 {{-- Footer --}}
 <footer  data-aos="fade" class="aos pl-172 pr-172">
@@ -102,7 +102,7 @@
 	</div>
 
 
-</footer>
+</footer>@endif
 {{-- / Footer --}}
 
 @endsection

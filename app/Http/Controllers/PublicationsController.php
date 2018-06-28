@@ -12,7 +12,8 @@ class PublicationsController extends RunsiteCMFBaseController
 	 */
 	public function index(): View
 	{
-		$publications = M('publication')->orderBy('pubdate', 'desc')->paginate();
+		$skip = request('skip') ?: 0;
+		$publications = M('publication')->orderBy('pubdate', 'desc')->skip($skip)->take(30)->get();
 
 		return $this->view('publications.index', compact('publications'));
 	}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@if(! request('ajax'))<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta charset="UTF-8">
@@ -52,7 +52,7 @@
 			line-height: 35px;
 			padding-top: 50px;
 		}
-		
+
 		.publication-image {
 			margin-bottom: 0;
 		}
@@ -68,9 +68,10 @@
 
 	{{-- APP STYLES END --}}
 </head>
-<body>
+<body>@endif
 	@yield('app')
 
+	@if(! request('ajax'))
 	{{-- APP SCRIPTS --}}
 	{!! Minify::javascript([
 
@@ -248,5 +249,5 @@
 
 	@yield('page-scripts')
 </body>
-</html>
+</html>@endif
 

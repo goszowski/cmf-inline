@@ -12,6 +12,8 @@ class ProjectsController extends RunsiteCMFBaseController
 	 */
 	public function index(): View
 	{
+		$skip = request('skip') ?: 0;
+
 		$section = null;
 		if($this->node->model->name != 'section')
 		{
@@ -30,7 +32,7 @@ class ProjectsController extends RunsiteCMFBaseController
 					->groupBy('rs_nodes.id');
 			})
 			->orderBy('position', 'desc')
-			->paginate();
+			->skip($skip)->take(30)->get();
 
 		$categories = M('project_category')->ordered()->get();
 
