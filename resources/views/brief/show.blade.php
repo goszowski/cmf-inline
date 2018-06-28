@@ -22,13 +22,21 @@
 	</div>
 </div>
 
-<div class="blocks">
-	@foreach($blocks as $block)
-		<div id="block-{{ $block->node->id }}">
-			@include('partials.blocks.'.$block->block_option->template)
-		</div>
-	@endforeach
+@foreach($groups as $group)
+<div class="contact-form clearfix">
+	<p class="title-block_small-title">{{ $group->name }}</p>
+	<div class="row">
+
+		@foreach($fields as $field)
+			@if($field->parent_id == $group->id)
+				@include('partials.fields.' . $field->field_type->template)
+			@endif
+		@endforeach
+
+	</div>
 </div>
+@endforeach
+
 
 @include('partials.block-link')
 
@@ -49,21 +57,6 @@
 			backDelay: $('h1 .element').data('backdelay') ? $('h1 .element').data('backdelay') : 2000 ,
 			typeSpeed: 10,
 		});
-
-		@foreach($blocks as $block)
-			@if($block->wordsArr)
-				$('.blocks #block-{{ $block->node->id }} .element').typed({
-					strings: [
-						@foreach($block->wordsArr as $k=>$word)
-							$('.blocks #block-{{ $block->node->id }} .element').data('text{{ $k }}'), 
-						@endforeach
-					],
-					loop: $('.blocks #block-{{ $block->node->id }} .element').data('loop') ? $('.blocks #block-{{ $block->node->id }} .element').data('loop') : false ,
-					backDelay: $('.blocks #block-{{ $block->node->id }} .element').data('backdelay') ? $('.blocks #block-{{ $block->node->id }} .element').data('backdelay') : 2000 ,
-					typeSpeed: 10,
-				});
-			@endif
-		@endforeach
 
 		AOS.init({
 			duration: 1000,
