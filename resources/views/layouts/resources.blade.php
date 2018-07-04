@@ -66,6 +66,12 @@
 		}
 
 		.g-recaptcha {display: none;}
+
+
+		.bg-reverse .studio-inner-block_descr {
+			text-align: left;
+			left: 0;
+		}
 	</style>
 
 	{{-- APP STYLES END --}}
