@@ -21,7 +21,7 @@
 				<ul>
 					@foreach($mainMenuItems as $menu_item)
 						<li>
-							<a class="" href="{{ lPath($menu_item->link->node->path->name) }}">{{ $menu_item->name }}</a>
+							<a class="{{ str_is($menu_item->link->node->path->name. '*', $fields->node->path->name) ? 'active' : null }}" href="{{ lPath($menu_item->link->node->path->name) }}">{{ $menu_item->name }}</a>
 						</li>
 					@endforeach
 				</ul>

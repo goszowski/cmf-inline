@@ -59,6 +59,7 @@ class RunsiteCMFBaseController extends BaseController
 
         $p = [
             $this->node->model->name   => $this->fields,
+            'fields' => $this->fields,
         ];
 
         if($params) {
