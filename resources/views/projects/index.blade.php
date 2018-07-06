@@ -32,7 +32,7 @@
 		<nav class="p-nav portfolio-nav">
 			<ul>
 				<li class="{{ !isset($project_category) ? 'active' : null }}">
-					<a href="{{ lPath('/portfolio') }}">{{ t('Wszystkie') }}</a>
+					<a class="nav__item" href="{{ lPath('/portfolio') }}">{{ t('Wszystkie') }}</a>
 				</li>
 				@foreach($categories as $category)
 					<li class="{{ (isset($project_category) and $project_category->node->path->name == $category->node->path->name) ? 'active' : null }}"><a href="{{ lPath($category->node->path->name) }}" class="nav__item">{{ $category->name }}</a></li>
